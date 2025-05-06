@@ -5,7 +5,7 @@ public class Product {
     private Integer id;
     private  String name;
     private Double price;
-    private Integer stock;
+    private int stock;
 
     public Product(Integer id, String name, Double price, Integer stock) {
         this.id = id;
@@ -40,7 +40,7 @@ public class Product {
         this.price = price;
     }
 
-    public Integer getStock() {
+    public int getStock() {
         return stock;
     }
 

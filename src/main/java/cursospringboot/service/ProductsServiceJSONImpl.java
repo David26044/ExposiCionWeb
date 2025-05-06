@@ -25,4 +25,29 @@ public class ProductsServiceJSONImpl implements ProductService {
         }
 
     }
+
+    @Override
+    public Product getProductById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Product addProduct(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product updateProduct(Product product) {
+        return null;
+    }
+
+    @Override
+    public Product deleteProductById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Product patchProduct(Product partialProduct) {
+        return null;
+    }
 }

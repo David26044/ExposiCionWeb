@@ -2,7 +2,7 @@ package cursospringboot.domain;
 //Clase POJO
 public class Costumer {
     //Atributes
-    private int ID;
+    private Integer ID;
 
     private String name;
 
