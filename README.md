@@ -55,3 +55,7 @@ Icon=/opt/Postman/app/icons/icon_128x128.png
 Exec=/opt/Postman/Postman
 Terminal=false
 ```
+
+sudo update-desktop-database
+
+sudo apt install openjdk-17-jdk
