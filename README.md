@@ -19,13 +19,16 @@ sudo nano intellij.desktop
 
 Pegamos: 
 
+```
 [Desktop Entry]
 Type=Application
 Categories=Development
-Name=Intelli J Idea
+Name=IntelliJ IDEA
 Comment=Community Edition
-Icon= /opt/idea/bin/idea.png
+Icon=/opt/idea/bin/idea.png
 Exec=/opt/idea/bin/idea.sh
+Terminal=false
+```
 
 
 #Para instalar Postman
@@ -42,10 +45,13 @@ Hacemos cd .local/share/applications
 
 sudo nano Postman.desktop
 
+```
 [Desktop Entry]
 Type=Application
 Categories=Development
 Name=Postman
-Comment=
+Comment=API Platform
 Icon=/opt/Postman/app/icons/icon_128x128.png
 Exec=/opt/Postman/Postman
+Terminal=false
+```
