@@ -1,16 +1,25 @@
+
 package cursospringboot.domain;
-//Clase POJO
+
+/**
+ * Clase POJO que representa un cliente en el sistema.
+ * Contiene la información básica de un cliente incluyendo
+ * su identificación, nombre, nombre de usuario y contraseña.
+ */
 public class Costumer {
-    //Atributes
     private Integer ID;
-
     private String name;
-
     private String username;
-
     private String password;
 
-    //Constructor
+    /**
+     * Constructor que inicializa todos los campos del cliente.
+     *
+     * @param ID Identificador único del cliente
+     * @param name Nombre completo del cliente
+     * @param username Nombre de usuario para el sistema
+     * @param password Contraseña del cliente
+     */
     public Costumer(int ID, String name, String username, String password) {
         this.ID = ID;
         this.name = name;
@@ -18,6 +27,7 @@ public class Costumer {
         this.password = password;
     }
 
+    // Getters y Setters
     public int getID() {
         return ID;
     }

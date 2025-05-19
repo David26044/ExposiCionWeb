@@ -3,18 +3,23 @@ package cursospringboot.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-/*
-* Con esta clase lo que hago es entrar al puerto 80 de localhost
-* con la ruta del GetMapping y me muestra el mensaje de retorno. Por ejemplo,
-* localhost:8080/hello y así con cualquier valor de GetMapping
-* */
-
+/**
+ * Controlador REST que muestra un mensaje "Hello World" a través de diferentes rutas.
+ * Escucha en el puerto 8080 y responde a las rutas: /hello, /hw y /hola.
+ */
 @RestController
 public class HelloWorldRestController {
+
+    /**
+     * Maneja solicitudes GET y retorna un saludo simple.
+     *
+     * Ejemplo: http://localhost:8080/hello -> retorna "Hello World!"
+     *
+     * @return String mensaje "Hello World!"
+     */
     @GetMapping({"/hello", "/hw", "/hola"})
     public String helloWorld() {
         System.out.println("Solicitud ejecutada");
         return "Hello World!";
     }
-
 }
