@@ -1,12 +1,18 @@
 package cursospringboot.domain;
 
+/**
+ * Clase que representa un producto en el sistema.
+ */
 public class Product {
 
-    private Integer id;
-    private  String name;
-    private Double price;
-    private int stock;
+    private Integer id;        // Identificador único del producto
+    private String name;       // Nombre del producto
+    private Double price;      // Precio del producto
+    private int stock;        // Cantidad disponible en inventario
 
+    /**
+     * Constructor con todos los campos
+     */
     public Product(Integer id, String name, Double price, Integer stock) {
         this.id = id;
         this.name = name;
@@ -14,8 +20,12 @@ public class Product {
         this.stock = stock;
     }
 
+    /**
+     * Constructor por defecto
+     */
     public Product(){}
 
+    // Getters y Setters
     public Integer getId() {
         return id;
     }
