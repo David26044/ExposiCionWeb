@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Archivo CSS personalizado -->
+    <link rel="stylesheet" href="/css/productos.css">
+</head>
+<body class="productos bg-light">
+    <div class="container py-5">
+        <h1 class="text-center text-primary mb-4">Gestión de Productos</h1>
+
+        <!-- Tabla de productos -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">Lista de Productos</h3>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped table-hover">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Stock</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <!-- Los productos se cargarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Formularios CRUD -->
+        <div class="row">
+            <!-- Agregar Producto -->
+            <div class="col-md-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0">Agregar Producto</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="addProductForm">
+                            <div class="mb-3">
+                                <label for="productId" class="form-label">ID</label>
+                                <input type="number" id="productId" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productName" class="form-label">Nombre</label>
+                                <input type="text" id="productName" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productPrice" class="form-label">Precio</label>
+                                <input type="number" step="0.01" id="productPrice" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="productStock" class="form-label">Stock</label>
+                                <input type="number" id="productStock" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Agregar Producto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editar Producto -->
+            <div class="col-md-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-warning text-dark">
+                        <h3 class="card-title mb-0">Editar Producto (PUT)</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="editProductForm">
+                            <div class="mb-3">
+                                <label for="editProductId" class="form-label">ID</label>
+                                <input type="number" id="editProductId" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductName" class="form-label">Nombre</label>
+                                <input type="text" id="editProductName" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductPrice" class="form-label">Precio</label>
+                                <input type="number" step="0.01" id="editProductPrice" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="editProductStock" class="form-label">Stock</label>
+                                <input type="number" id="editProductStock" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-warning w-100">Editar Producto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Editar Parcialmente y Eliminar -->
+        <div class="row">
+            <!-- Editar Parcialmente -->
+            <div class="col-md-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-info text-white">
+                        <h3 class="card-title mb-0">Editar Producto Parcialmente (PATCH)</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="patchProductForm">
+                            <div class="mb-3">
+                                <label for="patchProductId" class="form-label">ID</label>
+                                <input type="number" id="patchProductId" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="patchProductName" class="form-label">Nombre</label>
+                                <input type="text" id="patchProductName" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="patchProductPrice" class="form-label">Precio</label>
+                                <input type="number" step="0.01" id="patchProductPrice" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="patchProductStock" class="form-label">Stock</label>
+                                <input type="number" id="patchProductStock" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-info w-100">Editar Parcialmente</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eliminar Producto -->
+            <div class="col-md-6">
+                <div class="card shadow mb-4">
+                    <div class="card-header bg-danger text-white">
+                        <h3 class="card-title mb-0">Eliminar Producto</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="deleteProductForm">
+                            <div class="mb-3">
+                                <label for="deleteProductId" class="form-label">ID</label>
+                                <input type="number" id="deleteProductId" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-danger w-100">Eliminar Producto</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gráficas -->
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h3 class="card-title mb-0">Estadísticas</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <canvas id="priceChart"></canvas>
+                    </div>
+                    <div class="col-md-6">
+                        <canvas id="stockChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Archivo JS personalizado -->
+    <script src="/js/productos.js"></script>
+</body>
+</html>

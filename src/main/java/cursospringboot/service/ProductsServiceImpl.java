@@ -111,13 +111,15 @@ public class ProductsServiceImpl implements ProductService {
     public Product patchProduct(Product partialProduct) {
         for (Product existingProduct : products) {
             if (existingProduct.getId().equals(partialProduct.getId())) {
-                // Actualiza solo los campos que no son nulos
+                System.out.println(partialProduct.getName());
                 if (partialProduct.getName() != null) {
                     existingProduct.setName(partialProduct.getName());
                 }
-                if (partialProduct.getPrice() == null) {
+                System.out.println(partialProduct.getPrice());
+                if (partialProduct.getPrice() != null) {
                     existingProduct.setPrice(partialProduct.getPrice());
                 }
+                System.out.println(partialProduct.getStock());
                 if (partialProduct.getStock() != 0) {
                     existingProduct.setStock(partialProduct.getStock());
                 }
